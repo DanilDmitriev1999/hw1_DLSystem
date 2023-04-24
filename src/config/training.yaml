@@ -3,8 +3,9 @@ Base:
 
 Data:
   sr: ...
+  batch_size: 32
+  num_workers: 0
 
 Training:
   n_epoch: 10
-  batch_size: 32
   lr: 1e-4
