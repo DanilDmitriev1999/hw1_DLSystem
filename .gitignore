@@ -163,3 +163,4 @@ cython_debug/
 *.wav
 *.pcm
 *.mp3
+*train_cache*

@@ -1,8 +1,12 @@
 Base:
-  training_dataset: ""
+  training_dataset: "flexthink/audiomnist"
 
 Data:
-  sr: ...
+  source_sr: 48000
+  target_sr: 16000
+  n_fft: 256
+  hop_length: 128
+  power: 2.0
   batch_size: 32
   num_workers: 0
 

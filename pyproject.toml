@@ -13,9 +13,13 @@ pyyaml = "^6.0"
 torch = "1.9.0"
 torchvision = "0.10.0"
 torchaudio = "0.9.0"
-numpy = "1.17.5"
+numpy = "1.20.3"
 pytorch-lightning = "1.6.5"
 tqdm = "^4.65.0"
+datasets = "^2.11.0"
+setuptools = "59.5.0"
+soundfile = "^0.12.1"
+librosa = "^0.10.0.post2"
 
 
 [build-system]

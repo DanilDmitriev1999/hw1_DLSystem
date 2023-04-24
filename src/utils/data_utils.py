@@ -1,4 +1,5 @@
 import numpy as np
+import yaml
 
 
 def remove_silence(audio, sr, threshold=-40, min_duration=0.1):
@@ -22,13 +23,21 @@ def remove_silence(audio, sr, threshold=-40, min_duration=0.1):
     min_silent_samples = int(min_duration * sr)
 
     # Find continuous regions of silence
-    silent_regions = np.split(non_silent_samples, np.where(np.diff(non_silent_samples) > min_silent_samples)[0] + 1)
+    silent_regions = np.split(
+        non_silent_samples,
+        np.where(np.diff(non_silent_samples) > min_silent_samples)[0] + 1,
+    )
 
-    output_regions = [audio[region[0]:region[-1] + 1] for region in silent_regions]
+    output_regions = [audio[region[0] : region[-1] + 1] for region in silent_regions]
     regions_idx = [(region[0], region[-1] + 1) for region in silent_regions]
 
     # Remove silence from the input audio
     output_audio = np.concatenate(output_regions)
 
-
     return output_regions, output_audio, regions_idx
+
+
+def load_yaml(path):
+    with open(path, "r") as f:
+        yaml_file = yaml.load(f, Loader=yaml.FullLoader)
+    return yaml_file
