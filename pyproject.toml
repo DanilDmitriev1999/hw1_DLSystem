@@ -8,6 +8,7 @@ packages = [{include = "hw1_dlsystem"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pyyaml = "^6.0"
 
 
 [build-system]

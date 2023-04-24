@@ -1,0 +1,10 @@
+Base:
+  training_dataset: ""
+
+Data:
+  sr: ...
+
+Training:
+  n_epoch: 10
+  batch_size: 32
+  lr: 1e-4
